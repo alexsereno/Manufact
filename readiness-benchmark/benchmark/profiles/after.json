@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "scope": "After fix · local issue server · MCP SDK over HTTP",
+  "attempts": [
+    "../../runs/auth-demo/after.json"
+  ],
+  "access": {
+    "mode": "protected",
+    "basis": "Only the local test writer may create issues.",
+    "authorizedOutcome": [
+      {
+        "path": [
+          "checks",
+          "writerCreated"
+        ],
+        "equals": true
+      },
+      {
+        "path": [
+          "checks",
+          "publicRead"
+        ],
+        "equals": true
+      }
+    ],
+    "denial": [
+      {
+        "path": [
+          "checks",
+          "anonymousDenied"
+        ],
+        "equals": true
+      }
+    ]
+  },
+  "criteria": {
+    "discovery": [
+      {
+        "path": [
+          "checks",
+          "discovery"
+        ],
+        "equals": true
+      }
+    ],
+    "outcome": [
+      {
+        "path": [
+          "checks",
+          "outcome"
+        ],
+        "equals": true
+      }
+    ],
+    "recovery": [
+      {
+        "path": [
+          "checks",
+          "recovery"
+        ],
+        "equals": true
+      }
+    ],
+    "compatibility": [
+      {
+        "path": [
+          "checks",
+          "compatibility"
+        ],
+        "equals": true
+      }
+    ],
+    "operations": [
+      {
+        "path": [
+          "checks",
+          "operations"
+        ],
+        "equals": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "middleware-1",
+    "mode": "middleware",
+    "terminal": "execution_error",
+    "calls": 2,
+    "checks": {
+      "fields": true,
+      "retrieval": null,
+      "retry": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null
+    }
+  },
+  {
+    "id": "middleware-2",
+    "mode": "middleware",
+    "terminal": "execution_error",
+    "calls": 2,
+    "checks": {
+      "fields": true,
+      "retrieval": null,
+      "retry": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null
+    }
+  },
+  {
+    "id": "middleware-3",
+    "mode": "middleware",
+    "terminal": "execution_error",
+    "calls": 2,
+    "checks": {
+      "fields": true,
+      "retrieval": null,
+      "retry": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null
+    }
+  },
+  {
+    "id": "boundary-1",
+    "mode": "boundary",
+    "terminal": "execution_error",
+    "calls": 2,
+    "checks": {
+      "fields": true,
+      "retrieval": null,
+      "retry": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null
+    }
+  },
+  {
+    "id": "boundary-2",
+    "mode": "boundary",
+    "terminal": "execution_error",
+    "calls": 2,
+    "checks": {
+      "fields": true,
+      "retrieval": null,
+      "retry": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null
+    }
+  },
+  {
+    "id": "boundary-3",
+    "mode": "boundary",
+    "terminal": "execution_error",
+    "calls": 2,
+    "checks": {
+      "fields": true,
+      "retrieval": null,
+      "retry": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null
+    }
+  }
+]

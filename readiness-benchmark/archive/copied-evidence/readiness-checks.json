@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Canonical issue job reaches verified final state",
+    "dimension": "Functional readiness",
+    "status": "Pass",
+    "severity": "—",
+    "whyItMatters": "Users need the write and retrieval sequence to produce the requested state.",
+    "evidenceObserved": "3/3 remediated attempts passed direct state verification.",
+    "scopeOrLimitation": "Deterministic harness only; no agent planning was measured.",
+    "recommendedNextAction": "Repeat in two model-plus-client configurations.",
+    "manufactCloudCanHelp": "Yes — cross-client tests and traces can rerun the job against a deployed server.",
+    "evidencePath": "evidence/raw-results.json",
+    "attribution": "Verified server outcome"
+  },
+  {
+    "name": "Repeated request does not create a duplicate",
+    "dimension": "Functional readiness",
+    "status": "Pass",
+    "severity": "—",
+    "whyItMatters": "Agents and clients retry writes; duplicates corrupt user state.",
+    "evidenceObserved": "Baseline failed 3/3; remediation passed 3/3.",
+    "scopeOrLimitation": "One process and one idempotency key; concurrent retries were not tested.",
+    "recommendedNextAction": "Add a concurrency case and persist idempotency keys in the production datastore.",
+    "manufactCloudCanHelp": "Partly — Manufact can rerun and trace the check; the owner must implement domain idempotency.",
+    "evidencePath": "evidence/raw-results.json",
+    "attribution": "Server defect (injected regression), then server remediation"
+  },
+  {
+    "name": "Invalid enum input is rejected before a write",
+    "dimension": "Security and safety readiness",
+    "status": "Pass",
+    "severity": "—",
+    "whyItMatters": "Validated inputs prevent unsupported states from reaching business logic.",
+    "evidenceObserved": "6/6 invalid priority calls were rejected; persisted issue counts were unchanged.",
+    "scopeOrLimitation": "Only one invalid field was probed.",
+    "recommendedNextAction": "Add boundary, oversized, and hostile-string cases.",
+    "manufactCloudCanHelp": "Yes — schema checks and regression runs can surface validation gaps.",
+    "evidencePath": "evidence/raw-results.json",
+    "attribution": "Verified server behavior"
+  },
+  {
+    "name": "Writes are confined to an authorized local sandbox",
+    "dimension": "Security and safety readiness",
+    "status": "Pass",
+    "severity": "—",
+    "whyItMatters": "Benchmark writes must not touch live customer systems.",
+    "evidenceObserved": "All writes resolve to /Users/alexsereno/Developer/Manufact/my-mcp-app/benchmark/data/state.json; tools expose no network or production credential path.",
+    "scopeOrLimitation": "This proves fixture confinement, not production access controls.",
+    "recommendedNextAction": "Keep preview credentials least-privileged when adding a hosted sandbox.",
+    "manufactCloudCanHelp": "Yes — preview environments can keep evaluations away from production.",
+    "evidencePath": "benchmark/data/state.json",
+    "attribution": "Verified environment configuration"
+  },
+  {
+    "name": "Failed calls can be located in a server trace",
+    "dimension": "Observability and operational readiness",
+    "status": "Fail",
+    "severity": "Important",
+    "whyItMatters": "Operators need to locate the responsible call and boundary.",
+    "evidenceObserved": "Successful calls appear in the JSONL trace, but 6/6 schema-validation failures appear only in harness results because rejection occurs before tool middleware.",
+    "scopeOrLimitation": "Local tool middleware cannot reconstruct every failed request and has no correlation id, retention policy, metrics, or hosted search.",
+    "recommendedNextAction": "Capture validation failures at the transport boundary, add run correlation, and set deliberate retention controls.",
+    "manufactCloudCanHelp": "Yes — MCP-native analytics and traces can centralize production evidence.",
+    "evidencePath": "evidence/server-trace.jsonl",
+    "attribution": "Server observability gap"
+  },
+  {
+    "name": "Sensitive write requires authenticated, least-privileged identity",
+    "dimension": "Authentication and authorization readiness",
+    "status": "Can't verify",
+    "severity": "Blocker",
+    "whyItMatters": "A public write tool must reject callers without the required user and project permissions.",
+    "evidenceObserved": "The local sandbox has no OAuth provider or multi-user identity boundary.",
+    "scopeOrLimitation": "No authentication or authorization claim can be made from this fixture.",
+    "recommendedNextAction": "Add OAuth, two test users, minimal scopes, and denied cross-user reads/writes.",
+    "manufactCloudCanHelp": "Yes — Manufact supports authentication integration and cross-client testing; authorization logic remains owner responsibility.",
+    "evidencePath": "proposal.md#authentication-and-authorization-readiness",
+    "attribution": "Verification/evidence limitation"
+  },
+  {
+    "name": "Server build is reproducible and version-identifiable",
+    "dimension": "Deployment and release readiness",
+    "status": "Pass",
+    "severity": "—",
+    "whyItMatters": "A release must be buildable and traceable to a known server version.",
+    "evidenceObserved": "Production build exists; MCP initialization reported {\"name\":\"manufact-production-readiness-benchmark\",\"title\":\"MCP Production Readiness Benchmark\",\"icons\":[{\"src\":\"http://127.0.0.1:3100/mcp/_mcp-use/public/icon.svg\",\"mimeType\":\"image/svg+xml\",\"sizes\":[\"512x512\"]}],\"version\":\"0.1.0\",\"websiteUrl\":\"https://manufact.com\",\"description\":\"A local issue-management sandbox for demonstrating verified MCP production-readiness checks.\"}.",
+    "scopeOrLimitation": "No stable HTTPS endpoint, preview deployment, rollback, or load test was evaluated.",
+    "recommendedNextAction": "Deploy a preview endpoint and record artifact/revision identity and rollback steps.",
+    "manufactCloudCanHelp": "Yes — deployment, preview workflows, and publishing checks address this boundary.",
+    "evidencePath": ".mcp-use/build/index.js",
+    "attribution": "Verified build evidence"
+  }
+]

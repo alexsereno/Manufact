@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "scope": "Issue sandbox · authenticated writers preparing a public release",
+  "attempts": [
+    "../../runs/agent-2026-11-08T21-22-28.222Z-hOqTBN/results.json#0",
+    "../../runs/agent-2026-11-08T21-22-28.222Z-hOqTBN/results.json#1",
+    "../../runs/agent-2026-11-08T21-22-28.222Z-hOqTBN/results.json#2"
+  ],
+  "access": {
+    "mode": "protected",
+    "authorizedOutcome": [
+      {
+        "path": [
+          "checks",
+          "authorizedWrite"
+        ],
+        "equals": true
+      }
+    ],
+    "denial": [
+      {
+        "path": [
+          "checks",
+          "rejectsAnonymousWrite"
+        ],
+        "equals": true
+      }
+    ],
+    "basis": "Issue creation changes project data. This fixture reserves that action for signed-in writers."
+  }
+}

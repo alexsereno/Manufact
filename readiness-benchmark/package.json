@@ -1,0 +1,51 @@
+{
+  "name": "manufact-readiness-benchmark",
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.2"
+  },
+  "version": "0.1.0",
+  "description": "A verified local slice of the MCP Production Readiness Benchmark by Manufact",
+  "author": "Alexander Sereno",
+  "license": "MIT",
+  "homepage": "https://github.com/mcp-use/mcp-use",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "chatgpt plugins",
+    "claude connector",
+    "mcp-app",
+    "mcp-use",
+    "manufact"
+  ],
+  "scripts": {
+    "build": "mcp-use build",
+    "benchmark": "node scripts/scorecard.mjs",
+    "benchmark:agent": "npm run build && node scripts/run-agent.mjs",
+    "benchmark:scripted": "npm run build && node scripts/run-benchmark.mjs",
+    "dev": "mcp-use dev",
+    "start": "mcp-use start",
+    "typecheck": "mcp-use typecheck",
+    "test": "node --test scripts/*.test.mjs",
+    "report": "node scripts/agent-report.mjs",
+    "report:scripted": "node scripts/report.mjs",
+    "benchmark:capture": "node scripts/capture-sampler.mjs",
+    "demo:reset": "node scripts/film-demo.mjs reset",
+    "demo:before": "node --disable-warning=ExperimentalWarning scripts/film-demo.mjs before",
+    "demo:after": "node --disable-warning=ExperimentalWarning scripts/film-demo.mjs after",
+    "demo": "npm run --silent build && npm run --silent demo:reset && npm run --silent demo:before && npm run --silent demo:after"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "2.3.1",
+    "mcp-use": "2.12.2",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^7.0.2"
+  }
+}

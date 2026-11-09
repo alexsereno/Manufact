@@ -1,0 +1,13 @@
+{
+  "scope": "Public issue-management MCP with authenticated writers",
+  "status": "Blocked",
+  "blockers": [
+    "rejectsAnonymousWrite"
+  ],
+  "unverified": [
+    "tenantIsolation",
+    "crossClient",
+    "deployment",
+    "security"
+  ]
+}

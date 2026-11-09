@@ -1,0 +1,75 @@
+# MCP production readiness report
+
+Local issue sandbox. Scripted SDK client. No model. Sequential retries.
+
+Launch scope: Public issue-management MCP with authenticated writers. Candidate configuration: boundary.
+
+**Local workflow with boundary tracing: incomplete or failed.**
+
+**Public release: Blocked: failed required checks — Reject anonymous writes.**
+
+Missing required evidence: Retry without a duplicate, Retrieve without changing state, Reject invalid priority, Find the rejected call, Isolate tenants, Verify intended clients and integrations, Verify hosted release, Verify remaining safety requirements.
+
+## Main finding
+
+- middleware: failed-call trace 0 pass, 0 fail, 3 unverified; invalid-write check 0 pass, 0 fail, 3 unverified. Scheduled attempts: 3.
+- boundary: failed-call trace 0 pass, 0 fail, 3 unverified; invalid-write check 0 pass, 0 fail, 3 unverified. Scheduled attempts: 3.
+
+A trace failure means a readable trace lacks the required call, tool, or field. A missing trace is Unverified. The trace change does not fix anonymous access.
+
+## All scheduled attempts
+
+Workflow combines create, retry, retrieval, and invalid-write state checks. Individual checks appear in the counts below and results.json.
+
+| Attempt evidence | Outcome | Calls | Call time (ms) | Workflow | Failed-call trace | Anonymous writes denied |
+|---|---|---|---|---|---|---|
+| [middleware-1](middleware-1/events.jsonl) | interrupted | 1 | 12.7 | Unverified | Unverified | Fail |
+| [boundary-1](boundary-1/events.jsonl) | interrupted | 1 | 7.2 | Unverified | Unverified | Fail |
+| [middleware-2](middleware-2/events.jsonl) | interrupted | 1 | 7.0 | Unverified | Unverified | Fail |
+| [boundary-2](boundary-2/events.jsonl) | interrupted | 1 | 6.9 | Unverified | Unverified | Fail |
+| [middleware-3](middleware-3/events.jsonl) | interrupted | 1 | 6.0 | Unverified | Unverified | Fail |
+| [boundary-3](boundary-3/events.jsonl) | interrupted | 1 | 6.6 | Unverified | Unverified | Fail |
+
+## Counts by configuration
+
+P/F/U = Pass / Fail / Unverified. Every scheduled attempt stays in the denominator.
+
+| Configuration | Scheduled | Complete | Errors | Timeouts | Interrupted | Incomplete |
+|---|---|---|---|---|---|---|
+| middleware | 3 | 0 | 0 | 0 | 3 | 0 |
+| boundary | 3 | 0 | 0 | 0 | 3 | 0 |
+
+| Check | middleware P/F/U | boundary P/F/U |
+|---|---|---|
+| Create the requested issue | 3/0/0 | 3/0/0 |
+| Retry without a duplicate | 0/0/3 | 0/0/3 |
+| Retrieve without changing state | 0/0/3 | 0/0/3 |
+| Reject invalid priority | 0/0/3 | 0/0/3 |
+| Find the rejected call | 0/0/3 | 0/0/3 |
+| Reject anonymous writes | 0/3/0 | 0/3/0 |
+| Isolate tenants | 0/0/3 | 0/0/3 |
+| Verify intended clients and integrations | 0/0/3 | 0/0/3 |
+| Verify hosted release | 0/0/3 | 0/0/3 |
+| Verify remaining safety requirements | 0/0/3 | 0/0/3 |
+
+## Inspect the evidence
+
+Compare the invalid call's reply and state with the preceding retrieval snapshot. Find the same correlation ID in the attempt's trace.jsonl. Middleware-only capture misses schema validation before tool middleware runs; boundary capture records that error.
+
+- middleware-1: [journal](middleware-1/events.jsonl), [trace](middleware-1/trace.jsonl), [final store](middleware-1/state.json).
+- boundary-1: [journal](boundary-1/events.jsonl), [trace](boundary-1/trace.jsonl), [final store](boundary-1/state.json).
+- middleware-2: [journal](middleware-2/events.jsonl), [trace](middleware-2/trace.jsonl), [final store](middleware-2/state.json).
+- boundary-2: [journal](boundary-2/events.jsonl), [trace](boundary-2/trace.jsonl), [final store](boundary-2/state.json).
+- middleware-3: [journal](middleware-3/events.jsonl), [trace](middleware-3/trace.jsonl), [final store](middleware-3/state.json).
+- boundary-3: [journal](boundary-3/events.jsonl), [trace](boundary-3/trace.jsonl), [final store](boundary-3/state.json).
+
+
+## Limits and next action
+
+These are local observations, not a production success rate. Call times describe these attempts, not hosted performance. Tenant isolation, model planning, concurrent retries, cross-client behavior, and hosted reliability remain unverified. Enforce identity before public release, then test allowed and denied writes with two identities.
+
+[Configuration and hashes](manifest.json) · [Release decision](release.json) · [Machine-readable checks](results.json) · [Counts](summary.json)
+
+[Exact task and rules](task.json) · [Grader used for this run](verifier.mjs)
+
+Regenerate offline: `node <run-directory>/verifier.mjs <run-directory>`.

@@ -1,0 +1,26 @@
+{
+  "mode": "remediated",
+  "nextIssueNumber": 2,
+  "projects": [
+    {
+      "name": "Mobile"
+    }
+  ],
+  "users": [
+    {
+      "email": "alex.test@example.com"
+    }
+  ],
+  "issues": [
+    {
+      "externalId": "BUG-MOBILE-CHECKOUT-001",
+      "title": "Checkout crashes after payment confirmation",
+      "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+      "project": "Mobile",
+      "priority": "high",
+      "assignee": "alex.test@example.com",
+      "id": "MOB-1",
+      "createdAt": "2026-11-06T23:49:14.425Z"
+    }
+  ]
+}

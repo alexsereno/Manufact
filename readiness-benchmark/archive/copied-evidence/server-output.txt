@@ -1,0 +1,36 @@
+mcp-use server running at http://localhost:3100/mcp
+GET /mcp 200 6ms
+initialize manufact-readiness-harness/0.1.0 /mcp 200 client=manufact-readiness-harness/0.1.0 8ms
+POST /mcp 202 1ms
+GET /mcp 204 0ms
+tools/list /mcp 200 client=unknown 4ms
+tools/call benchmark-reset /mcp 200 client=unknown 2ms
+tools/call create-issue /mcp 200 client=unknown 1ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call get-issue /mcp 200 client=unknown 0ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call benchmark-reset /mcp 200 client=unknown 1ms
+tools/call create-issue /mcp 200 client=unknown 1ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call get-issue /mcp 200 client=unknown 0ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call benchmark-reset /mcp 200 client=unknown 0ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call create-issue /mcp 200 client=unknown 1ms
+tools/call get-issue /mcp 200 client=unknown 0ms
+tools/call create-issue /mcp 200 client=unknown 1ms
+tools/call benchmark-reset /mcp 200 client=unknown 1ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call get-issue /mcp 200 client=unknown 0ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call benchmark-reset /mcp 200 client=unknown 0ms
+tools/call create-issue /mcp 200 client=unknown 1ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call get-issue /mcp 200 client=unknown 1ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call benchmark-reset /mcp 200 client=unknown 0ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call create-issue /mcp 200 client=unknown 0ms
+tools/call get-issue /mcp 200 client=unknown 0ms
+tools/call create-issue /mcp 200 client=unknown 0ms

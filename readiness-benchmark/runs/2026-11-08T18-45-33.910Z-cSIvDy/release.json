@@ -1,0 +1,33 @@
+{
+  "scope": {
+    "name": "Public issue-management MCP with authenticated writers",
+    "candidateMode": "boundary",
+    "requiredChecks": [
+      "fields",
+      "retry",
+      "retrieval",
+      "validation",
+      "trace",
+      "rejectsAnonymousWrite",
+      "tenantIsolation",
+      "crossClient",
+      "deployment",
+      "security"
+    ]
+  },
+  "status": "Blocked",
+  "blockers": [
+    "rejectsAnonymousWrite"
+  ],
+  "unverified": [
+    "retry",
+    "retrieval",
+    "validation",
+    "trace",
+    "tenantIsolation",
+    "crossClient",
+    "deployment",
+    "security"
+  ],
+  "incompleteEvidence": true
+}

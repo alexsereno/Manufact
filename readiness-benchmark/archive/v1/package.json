@@ -1,0 +1,42 @@
+{
+  "name": "my-mcp-app",
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.2"
+  },
+  "version": "0.1.0",
+  "description": "A verified local slice of the MCP Production Readiness Benchmark by Manufact",
+  "author": "Alexander Sereno",
+  "license": "MIT",
+  "homepage": "https://github.com/mcp-use/mcp-use",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "chatgpt plugins",
+    "claude connector",
+    "mcp-app",
+    "mcp-use",
+    "manufact"
+  ],
+  "scripts": {
+    "build": "mcp-use build",
+    "benchmark": "npm run build && node scripts/run-benchmark.mjs",
+    "dev": "mcp-use dev",
+    "start": "mcp-use start",
+    "deploy": "mcp-use deploy",
+    "typecheck": "mcp-use typecheck"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "2.3.1",
+    "mcp-use": "2.12.2",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^7.0.2"
+  }
+}

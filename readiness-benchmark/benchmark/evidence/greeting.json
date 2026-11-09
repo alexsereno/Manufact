@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-11-09T17:12:30.333Z",
+  "server": {
+    "name": "my-mcp-app",
+    "title": "MCP Apps Widget Sampler",
+    "icons": [
+      {
+        "src": "http://localhost:56218/mcp/_mcp-use/public/icon.svg",
+        "mimeType": "image/svg+xml",
+        "sizes": [
+          "512x512"
+        ]
+      }
+    ],
+    "version": "1.0.0",
+    "websiteUrl": "https://mcp-use.com",
+    "description": "Explore interactive MCP App features including tool calls, model context, themes, and display modes."
+  },
+  "buildSha256": "9f62d5be557c92a4ca9af97047d4a17c2fb6c3ebd5711521e465e009e76fa217",
+  "identity": "anonymous",
+  "tool": {
+    "name": "say-hello",
+    "title": "Say hello",
+    "description": "Returns a greeting for the Say Hello button demo",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name to greet"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "greeting": {
+          "type": "string",
+          "description": "Greeting to display"
+        }
+      },
+      "required": [
+        "greeting"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  "args": {
+    "name": "Manufact"
+  },
+  "reply": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Hello, Manufact!"
+      }
+    ],
+    "structuredContent": {
+      "greeting": "Hello, Manufact!"
+    }
+  },
+  "toolError": false
+}

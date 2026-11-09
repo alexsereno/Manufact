@@ -1,0 +1,61 @@
+{
+  "version": 2,
+  "criteria": {
+    "discovery": "Can clients discover the advertised capabilities?",
+    "outcome": "Do representative tasks produce the promised results?",
+    "authentication": "Is the MCP properly authenticated for the data and actions it exposes?",
+    "recovery": "Do errors and retries preserve the intended state?",
+    "compatibility": "Does the MCP work on its supported clients?",
+    "operations": "Can the team detect failures and meet its operating targets?"
+  },
+  "reviewed": "2026-11-09",
+  "evidenceSources": {
+    "Manufact Quality Checker": {
+      "source": "https://manufact.com/leaderboard",
+      "use": "Attach the candidate review, section scores, reviewed/discovered tool counts and applicable Apps checks. Use the published quality score and category peer average as context."
+    },
+    "Manufact runtime analytics": {
+      "source": "https://docs.manufact.com/mcp/server-analytics",
+      "use": "Show per-tool and per-client calls, tool-result errors and p95 latency with window and denominator. Verify task success from traces and expected state."
+    },
+    "Manufact Publishing Checks": {
+      "source": "https://manufact.com/platform/publishing-checks",
+      "use": "Reuse the target-specific findings for the release candidate. Retain each finding and its evidence, including skipped checks."
+    }
+  },
+  "submissionTargets": {
+    "ChatGPT public listing": {
+      "sources": [
+        "https://developers.openai.com/plugins/plugin-guidelines",
+        "https://developers.openai.com/plugins/deploy/submission-errors"
+      ],
+      "checks": [
+        "Compare all three required behavior annotations with observed tool effects.",
+        "Verify domain ownership and a current production MCP scan.",
+        "For OAuth submissions, provide working reviewer credentials."
+      ]
+    },
+    "Claude connector directory": {
+      "sources": [
+        "https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy"
+      ],
+      "checks": [
+        "Verify applicable tool annotations, helpful errors and tool names of at most 64 characters.",
+        "For remote servers connecting to a remote service that requires authentication, verify secure OAuth 2.0 and a recognized certificate.",
+        "Review the developer submission materials, including three working use cases, sample test account and applicable privacy policy."
+      ]
+    },
+    "Official Claude Code plugin directory": {
+      "sources": [
+        "https://github.com/anthropics/claude-plugins-official",
+        "https://code.claude.com/docs/en/plugin-marketplaces",
+        "https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy"
+      ],
+      "checks": [
+        "Review plugin packaging and any bundled MCP configuration.",
+        "Validate the package and test installation and tool discovery from the intended marketplace.",
+        "Check official directory policy and submit the external plugin for quality and security review."
+      ]
+    }
+  }
+}

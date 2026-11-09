@@ -1,0 +1,220 @@
+[
+  {
+    "name": "create-issue",
+    "title": "Create sandbox issue",
+    "description": "Create an issue in the local Mobile sandbox. externalId is the idempotency key.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "externalId": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 80,
+          "description": "Stable caller-supplied idempotency key for this bug report"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 120,
+          "description": "Concise issue title"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Bug symptoms and reproduction context"
+        },
+        "project": {
+          "type": "string",
+          "const": "Mobile",
+          "description": "Authorized sandbox project"
+        },
+        "priority": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ],
+          "description": "Issue priority"
+        },
+        "assignee": {
+          "type": "string",
+          "const": "alex.test@example.com",
+          "description": "Authorized sandbox test user"
+        }
+      },
+      "required": [
+        "externalId",
+        "title",
+        "description",
+        "project",
+        "priority",
+        "assignee"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "issue": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "externalId": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "project": {
+              "type": "string",
+              "const": "Mobile"
+            },
+            "priority": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "urgent"
+              ]
+            },
+            "assignee": {
+              "type": "string",
+              "const": "alex.test@example.com"
+            },
+            "createdAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "externalId",
+            "title",
+            "description",
+            "project",
+            "priority",
+            "assignee",
+            "createdAt"
+          ],
+          "additionalProperties": false
+        },
+        "created": {
+          "type": "boolean"
+        },
+        "deduplicated": {
+          "type": "boolean"
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "baseline",
+            "remediated"
+          ]
+        }
+      },
+      "required": [
+        "issue",
+        "created",
+        "deduplicated",
+        "mode"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get-issue",
+    "title": "Get sandbox issue",
+    "description": "Retrieve an issue from the local sandbox by its issue id.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Issue id returned by create-issue"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "issue": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "externalId": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "project": {
+              "type": "string",
+              "const": "Mobile"
+            },
+            "priority": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "urgent"
+              ]
+            },
+            "assignee": {
+              "type": "string",
+              "const": "alex.test@example.com"
+            },
+            "createdAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "externalId",
+            "title",
+            "description",
+            "project",
+            "priority",
+            "assignee",
+            "createdAt"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "issue"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  }
+]

@@ -1,0 +1,225 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-11-06T18:36:31.897Z",
+  "resultType": "measured local demonstration",
+  "taskWording": "Create an issue for the checkout crash in the Mobile project, set priority high, assign alex.test@example.com, and retrieve it to confirm the final state. If the same request is retried, do not create a duplicate.",
+  "configuration": {
+    "endpoint": "http://127.0.0.1:3100/mcp",
+    "server": {
+      "name": "manufact-production-readiness-benchmark",
+      "title": "MCP Production Readiness Benchmark",
+      "icons": [
+        {
+          "src": "http://127.0.0.1:3100/mcp/_mcp-use/public/icon.svg",
+          "mimeType": "image/svg+xml",
+          "sizes": [
+            "512x512"
+          ]
+        }
+      ],
+      "version": "0.1.0",
+      "websiteUrl": "https://manufact.com",
+      "description": "A local issue-management sandbox for demonstrating verified MCP production-readiness checks."
+    },
+    "client": "@modelcontextprotocol/client 2.3.1",
+    "harness": "deterministic scripted MCP client; no model",
+    "model": "not applicable",
+    "authentication": "none (local sandbox)",
+    "verifier": "direct JSON state inspection",
+    "runCountPerConfiguration": 3,
+    "toolsDiscovered": [
+      "benchmark-reset",
+      "create-issue",
+      "get-issue"
+    ],
+    "heldConstant": [
+      "task wording",
+      "reset initial state",
+      "test data",
+      "server build and version",
+      "authentication state",
+      "MCP client and harness",
+      "verifier",
+      "run count"
+    ],
+    "changed": [
+      "sandbox idempotency mode"
+    ]
+  },
+  "attempts": [
+    {
+      "mode": "baseline",
+      "attempt": 1,
+      "startedAt": "2026-11-06T18:36:31.843Z",
+      "completedAt": "2026-11-06T18:36:31.866Z",
+      "durationMs": 23,
+      "toolCallCount": 5,
+      "toolErrors": 1,
+      "recoveredErrors": 0,
+      "firstCreate": {
+        "issueId": "MOB-1",
+        "created": true,
+        "deduplicated": false
+      },
+      "repeatedCreate": {
+        "issueId": "MOB-2",
+        "created": true,
+        "deduplicated": false
+      },
+      "invalidInputRejected": true,
+      "invalidInputEvidence": "[{\"type\":\"text\",\"text\":\"Input validation error: Invalid arguments for tool create-issue: priority: Invalid option: expected one of \\\"low\\\"|\\\"medium\\\"|\\\"high\\\"|\\\"urgent\\\"\"}]",
+      "verifier": {
+        "source": "benchmark/data/state.json (read directly, outside MCP)",
+        "issueCountForExternalId": 2,
+        "fieldsMatch": true,
+        "retrievedMatchesPersistedState": true,
+        "success": false
+      }
+    },
+    {
+      "mode": "baseline",
+      "attempt": 2,
+      "startedAt": "2026-11-06T18:36:31.866Z",
+      "completedAt": "2026-11-06T18:36:31.875Z",
+      "durationMs": 9,
+      "toolCallCount": 5,
+      "toolErrors": 1,
+      "recoveredErrors": 0,
+      "firstCreate": {
+        "issueId": "MOB-1",
+        "created": true,
+        "deduplicated": false
+      },
+      "repeatedCreate": {
+        "issueId": "MOB-2",
+        "created": true,
+        "deduplicated": false
+      },
+      "invalidInputRejected": true,
+      "invalidInputEvidence": "[{\"type\":\"text\",\"text\":\"Input validation error: Invalid arguments for tool create-issue: priority: Invalid option: expected one of \\\"low\\\"|\\\"medium\\\"|\\\"high\\\"|\\\"urgent\\\"\"}]",
+      "verifier": {
+        "source": "benchmark/data/state.json (read directly, outside MCP)",
+        "issueCountForExternalId": 2,
+        "fieldsMatch": true,
+        "retrievedMatchesPersistedState": true,
+        "success": false
+      }
+    },
+    {
+      "mode": "baseline",
+      "attempt": 3,
+      "startedAt": "2026-11-06T18:36:31.875Z",
+      "completedAt": "2026-11-06T18:36:31.880Z",
+      "durationMs": 5,
+      "toolCallCount": 5,
+      "toolErrors": 1,
+      "recoveredErrors": 0,
+      "firstCreate": {
+        "issueId": "MOB-1",
+        "created": true,
+        "deduplicated": false
+      },
+      "repeatedCreate": {
+        "issueId": "MOB-2",
+        "created": true,
+        "deduplicated": false
+      },
+      "invalidInputRejected": true,
+      "invalidInputEvidence": "[{\"type\":\"text\",\"text\":\"Input validation error: Invalid arguments for tool create-issue: priority: Invalid option: expected one of \\\"low\\\"|\\\"medium\\\"|\\\"high\\\"|\\\"urgent\\\"\"}]",
+      "verifier": {
+        "source": "benchmark/data/state.json (read directly, outside MCP)",
+        "issueCountForExternalId": 2,
+        "fieldsMatch": true,
+        "retrievedMatchesPersistedState": true,
+        "success": false
+      }
+    },
+    {
+      "mode": "remediated",
+      "attempt": 1,
+      "startedAt": "2026-11-06T18:36:31.880Z",
+      "completedAt": "2026-11-06T18:36:31.885Z",
+      "durationMs": 5,
+      "toolCallCount": 5,
+      "toolErrors": 1,
+      "recoveredErrors": 0,
+      "firstCreate": {
+        "issueId": "MOB-1",
+        "created": true,
+        "deduplicated": false
+      },
+      "repeatedCreate": {
+        "issueId": "MOB-1",
+        "created": false,
+        "deduplicated": true
+      },
+      "invalidInputRejected": true,
+      "invalidInputEvidence": "[{\"type\":\"text\",\"text\":\"Input validation error: Invalid arguments for tool create-issue: priority: Invalid option: expected one of \\\"low\\\"|\\\"medium\\\"|\\\"high\\\"|\\\"urgent\\\"\"}]",
+      "verifier": {
+        "source": "benchmark/data/state.json (read directly, outside MCP)",
+        "issueCountForExternalId": 1,
+        "fieldsMatch": true,
+        "retrievedMatchesPersistedState": true,
+        "success": true
+      }
+    },
+    {
+      "mode": "remediated",
+      "attempt": 2,
+      "startedAt": "2026-11-06T18:36:31.885Z",
+      "completedAt": "2026-11-06T18:36:31.890Z",
+      "durationMs": 5,
+      "toolCallCount": 5,
+      "toolErrors": 1,
+      "recoveredErrors": 0,
+      "firstCreate": {
+        "issueId": "MOB-1",
+        "created": true,
+        "deduplicated": false
+      },
+      "repeatedCreate": {
+        "issueId": "MOB-1",
+        "created": false,
+        "deduplicated": true
+      },
+      "invalidInputRejected": true,
+      "invalidInputEvidence": "[{\"type\":\"text\",\"text\":\"Input validation error: Invalid arguments for tool create-issue: priority: Invalid option: expected one of \\\"low\\\"|\\\"medium\\\"|\\\"high\\\"|\\\"urgent\\\"\"}]",
+      "verifier": {
+        "source": "benchmark/data/state.json (read directly, outside MCP)",
+        "issueCountForExternalId": 1,
+        "fieldsMatch": true,
+        "retrievedMatchesPersistedState": true,
+        "success": true
+      }
+    },
+    {
+      "mode": "remediated",
+      "attempt": 3,
+      "startedAt": "2026-11-06T18:36:31.890Z",
+      "completedAt": "2026-11-06T18:36:31.897Z",
+      "durationMs": 7,
+      "toolCallCount": 5,
+      "toolErrors": 1,
+      "recoveredErrors": 0,
+      "firstCreate": {
+        "issueId": "MOB-1",
+        "created": true,
+        "deduplicated": false
+      },
+      "repeatedCreate": {
+        "issueId": "MOB-1",
+        "created": false,
+        "deduplicated": true
+      },
+      "invalidInputRejected": true,
+      "invalidInputEvidence": "[{\"type\":\"text\",\"text\":\"Input validation error: Invalid arguments for tool create-issue: priority: Invalid option: expected one of \\\"low\\\"|\\\"medium\\\"|\\\"high\\\"|\\\"urgent\\\"\"}]",
+      "verifier": {
+        "source": "benchmark/data/state.json (read directly, outside MCP)",
+        "issueCountForExternalId": 1,
+        "fieldsMatch": true,
+        "retrievedMatchesPersistedState": true,
+        "success": true
+      }
+    }
+  ]
+}

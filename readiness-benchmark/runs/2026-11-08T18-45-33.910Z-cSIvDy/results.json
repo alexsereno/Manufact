@@ -1,0 +1,122 @@
+[
+  {
+    "id": "middleware-1",
+    "mode": "middleware",
+    "terminal": "interrupted",
+    "calls": 1,
+    "observedCallDurationMs": 12.657332999999966,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": null,
+      "retrieval": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  },
+  {
+    "id": "boundary-1",
+    "mode": "boundary",
+    "terminal": "interrupted",
+    "calls": 1,
+    "observedCallDurationMs": 7.20941700000003,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": null,
+      "retrieval": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  },
+  {
+    "id": "middleware-2",
+    "mode": "middleware",
+    "terminal": "interrupted",
+    "calls": 1,
+    "observedCallDurationMs": 6.978917000000024,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": null,
+      "retrieval": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  },
+  {
+    "id": "boundary-2",
+    "mode": "boundary",
+    "terminal": "interrupted",
+    "calls": 1,
+    "observedCallDurationMs": 6.86220800000001,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": null,
+      "retrieval": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  },
+  {
+    "id": "middleware-3",
+    "mode": "middleware",
+    "terminal": "interrupted",
+    "calls": 1,
+    "observedCallDurationMs": 6.007124999999974,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": null,
+      "retrieval": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  },
+  {
+    "id": "boundary-3",
+    "mode": "boundary",
+    "terminal": "interrupted",
+    "calls": 1,
+    "observedCallDurationMs": 6.644166000000041,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": null,
+      "retrieval": null,
+      "validation": null,
+      "trace": null,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  }
+]

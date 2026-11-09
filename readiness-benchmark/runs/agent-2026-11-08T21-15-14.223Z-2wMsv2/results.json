@@ -1,0 +1,59 @@
+[
+  {
+    "id": "agent-1",
+    "terminal": "complete",
+    "verdict": "Pass",
+    "checks": {
+      "createdRequestedIssue": true,
+      "retrievedWithoutMutation": true
+    },
+    "evidenceErrors": [],
+    "toolCalls": 2,
+    "modelRequests": 3,
+    "returnedModels": [
+      "gpt-6-luna"
+    ],
+    "tokenUsage": {
+      "prompt": 1898,
+      "completion": 117
+    }
+  },
+  {
+    "id": "agent-2",
+    "terminal": "complete",
+    "verdict": "Pass",
+    "checks": {
+      "createdRequestedIssue": true,
+      "retrievedWithoutMutation": true
+    },
+    "evidenceErrors": [],
+    "toolCalls": 2,
+    "modelRequests": 3,
+    "returnedModels": [
+      "gpt-6-luna"
+    ],
+    "tokenUsage": {
+      "prompt": 1898,
+      "completion": 122
+    }
+  },
+  {
+    "id": "agent-3",
+    "terminal": "complete",
+    "verdict": "Pass",
+    "checks": {
+      "createdRequestedIssue": true,
+      "retrievedWithoutMutation": true
+    },
+    "evidenceErrors": [],
+    "toolCalls": 2,
+    "modelRequests": 3,
+    "returnedModels": [
+      "gpt-6-luna"
+    ],
+    "tokenUsage": {
+      "prompt": 1898,
+      "completion": 119
+    }
+  }
+]

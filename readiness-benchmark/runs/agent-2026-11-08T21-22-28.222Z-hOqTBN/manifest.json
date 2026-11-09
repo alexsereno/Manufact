@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 2,
+  "kind": "launch-readiness",
+  "evidenceSource": "live OpenAI API",
+  "releaseScope": "Public issue-management MCP with authenticated writers",
+  "requiredChecks": [
+    "createdRequestedIssue",
+    "retrievedWithoutMutation",
+    "retry",
+    "validation",
+    "trace",
+    "rejectsAnonymousWrite",
+    "tenantIsolation",
+    "crossClient",
+    "deployment",
+    "security"
+  ],
+  "createdAt": "2026-11-08T21:22:28.222Z",
+  "model": "gpt-6-luna",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "settings": {
+    "reasoning_effort": "none",
+    "max_completion_tokens": 1200,
+    "parallel_tool_calls": false,
+    "tool_choice": "auto",
+    "store": false
+  },
+  "systemPrompt": "Complete the user's task using the available tools in this authorized local test sandbox. Do not invent tool results. If a tool returns an error, use that feedback to decide what to do next. Report only what you actually verified.",
+  "prompt": "Create a high-priority issue in the Mobile project assigned to alex.test@example.com. Use request key BUG-MOBILE-CHECKOUT-001. Use this exact title: \"Checkout crashes after payment confirmation\". Use this exact description: \"Confirming a valid test card payment closes the app before the receipt appears.\". Retrieve the saved issue to confirm its details, then tell me its ID. This is synthetic test data in a local sandbox.",
+  "expected": {
+    "externalId": "BUG-MOBILE-CHECKOUT-001",
+    "project": "Mobile",
+    "priority": "high",
+    "assignee": "alex.test@example.com",
+    "title": "Checkout crashes after payment confirmation",
+    "description": "Confirming a valid test card payment closes the app before the receipt appears."
+  },
+  "initialState": {
+    "mode": "remediated",
+    "nextIssueNumber": 1,
+    "projects": [
+      {
+        "name": "Mobile"
+      }
+    ],
+    "users": [
+      {
+        "email": "alex.test@example.com"
+      }
+    ],
+    "issues": []
+  },
+  "attempts": [
+    "agent-1",
+    "agent-2",
+    "agent-3"
+  ],
+  "limits": {
+    "maxTurns": 6,
+    "maxToolCalls": 6,
+    "apiTimeoutMs": 30000,
+    "attemptTimeoutMs": 120000,
+    "startupTimeoutMs": 10000,
+    "mcpTimeoutMs": 5000
+  },
+  "auth": "anonymous loopback MCP; API key is used only for OpenAI",
+  "client": {
+    "name": "@modelcontextprotocol/client",
+    "version": "2.3.1"
+  },
+  "serverFramework": {
+    "name": "mcp-use",
+    "version": "2.12.2"
+  },
+  "harness": "readiness-agent-v2",
+  "node": "v26.13.0",
+  "sourceSha256": {
+    "index.ts": "ba4e35680929f6ef1eb623fbd3e683826198ca22e199f717dd8995adeee7661e",
+    "benchmark/store.ts": "bf8c5a103f3a96e3ffa5bba4a29f8951364fe71824e2b99300b59c2418dbcc2b",
+    "benchmark/trace.ts": "3adde1d7309e49db6a73f85836684921af799d126624337d770c7f26eb72b578",
+    "benchmark/task.json": "78a20abcb22cabafb868022b7dbb960be05b5f7c857e2d36dc89f56256c20196",
+    "scripts/agent.mjs": "cb483be09c03b6b5d8032f322b6d3f85c17a0dd2e2c204fea1620a45226af106",
+    "scripts/agent-report.mjs": "f6e4ab1c86fb27425f6aa31691d18aab2dd15e5b8e07042b784c03d115f65e78",
+    "scripts/run-agent.mjs": "045b11d6ea93ae9ee52c0e81fdcde9e9ea7e9a850ca980419f30b6d758ae3a7c",
+    "scripts/serve.mjs": "e0502e96e34ea3b74ad478f656f2a370ac4f648d47cd789634e5d8feda47727d",
+    "package.json": "c57e932644b5ea64b642561f704d80b15f890bcebff526e5d3e112a81b39c5c5",
+    "package-lock.json": "a4ab21ddf903468926355e3f183d8dd49b44eacd9753c4a296929e361e6d0a2d"
+  },
+  "buildSha256": "2c806082c7e88caec1999b97c9f4ffb639436b529772ab62a57abbf3154023cf"
+}

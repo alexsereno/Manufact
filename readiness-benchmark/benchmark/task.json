@@ -1,0 +1,31 @@
+{
+  "id": "mobile-issue-v1",
+  "releaseScope": {
+    "name": "Public issue-management MCP with authenticated writers",
+    "candidateMode": "boundary",
+    "requiredChecks": ["fields", "retry", "retrieval", "validation", "trace", "rejectsAnonymousWrite", "tenantIsolation", "crossClient", "deployment", "security"]
+  },
+  "prompt": "File the Mobile checkout crash as high priority for alex.test@example.com. Use the supplied title, description, and stable request key. Retry the same write, retrieve the issue, then try a new write with priority critical.",
+  "expected": {
+    "externalId": "BUG-MOBILE-CHECKOUT-001",
+    "project": "Mobile",
+    "priority": "high",
+    "assignee": "alex.test@example.com",
+    "title": "Checkout crashes after payment confirmation",
+    "description": "Confirming a valid test card payment closes the app before the receipt appears."
+  },
+  "invalidOverrides": { "externalId": "PROBE-INVALID", "priority": "critical" },
+  "checks": {
+    "fields": { "title": "Create the requested issue", "rule": "Store exactly one issue with all requested fields; the successful reply must match the stored issue." },
+    "retry": { "title": "Retry without a duplicate", "rule": "Return the original issue, created=false and deduplicated=true; the full store must remain unchanged." },
+    "retrieval": { "title": "Retrieve without changing state", "rule": "Return the stored issue; the full store must remain unchanged." },
+    "validation": { "title": "Reject invalid priority", "rule": "Return a priority validation error; the full store must remain unchanged." },
+    "trace": { "title": "Find the rejected call", "rule": "In a readable server trace, match the invalid call's correlation ID, create-issue tool, validation_error outcome, and priority field." },
+    "rejectsAnonymousWrite": { "title": "Reject anonymous writes", "rule": "Public-release policy: reject the anonymous create with an authorization error and leave the full initial store unchanged. A persisted anonymous issue fails this gate." },
+    "tenantIsolation": { "title": "Isolate tenants", "rule": "Unverified: no two-identity fixture or identity enforcement is implemented." },
+    "crossClient": { "title": "Verify intended clients and integrations", "rule": "Unverified: no launch-client list or integration suite is implemented beyond the scripted SDK client." },
+    "deployment": { "title": "Verify hosted release", "rule": "Unverified: no hosted connection, preview, or rollback check is implemented." },
+    "security": { "title": "Verify remaining safety requirements", "rule": "Unverified: no checks for secret exposure, untrusted content, or destructive operations are implemented." }
+  },
+  "limits": ["Scripted client; no model", "Sequential retries only", "Single-user local fixture", "No identity enforcement", "No hosted, cross-client, or broad security evaluation"]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "middleware-1",
+    "mode": "middleware",
+    "terminal": "complete",
+    "calls": 4,
+    "observedCallDurationMs": 18.326376000000096,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": true,
+      "retrieval": true,
+      "validation": true,
+      "trace": false,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  },
+  {
+    "id": "boundary-1",
+    "mode": "boundary",
+    "terminal": "complete",
+    "calls": 4,
+    "observedCallDurationMs": 12.031709000000092,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": true,
+      "retrieval": true,
+      "validation": true,
+      "trace": true,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  },
+  {
+    "id": "middleware-2",
+    "mode": "middleware",
+    "terminal": "complete",
+    "calls": 4,
+    "observedCallDurationMs": 12.407376,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": true,
+      "retrieval": true,
+      "validation": true,
+      "trace": false,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  },
+  {
+    "id": "boundary-2",
+    "mode": "boundary",
+    "terminal": "complete",
+    "calls": 4,
+    "observedCallDurationMs": 11.387708000000089,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": true,
+      "retrieval": true,
+      "validation": true,
+      "trace": true,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  },
+  {
+    "id": "middleware-3",
+    "mode": "middleware",
+    "terminal": "complete",
+    "calls": 4,
+    "observedCallDurationMs": 10.348541999999725,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": true,
+      "retrieval": true,
+      "validation": true,
+      "trace": false,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  },
+  {
+    "id": "boundary-3",
+    "mode": "boundary",
+    "terminal": "complete",
+    "calls": 4,
+    "observedCallDurationMs": 11.429124000000002,
+    "evidenceErrors": [],
+    "checks": {
+      "fields": true,
+      "retry": true,
+      "retrieval": true,
+      "validation": true,
+      "trace": true,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    }
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "scope": "Public project · read a published issue",
+  "attempts": [
+    "../../runs/auth-demo/before.json",
+    "../../runs/auth-demo/after.json"
+  ],
+  "access": {
+    "mode": "public",
+    "basis": "MOB-1 is a synthetic public issue. Anyone may read it.",
+    "anonymousOutcome": [
+      {
+        "path": [
+          "checks",
+          "publicRead"
+        ],
+        "equals": true
+      }
+    ]
+  }
+}

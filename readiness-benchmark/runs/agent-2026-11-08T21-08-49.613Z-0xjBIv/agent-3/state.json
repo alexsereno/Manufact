@@ -1,0 +1,15 @@
+{
+  "mode": "remediated",
+  "nextIssueNumber": 1,
+  "projects": [
+    {
+      "name": "Mobile"
+    }
+  ],
+  "users": [
+    {
+      "email": "alex.test@example.com"
+    }
+  ],
+  "issues": []
+}

@@ -1,0 +1,42 @@
+{
+  "expected": {
+    "externalId": "BUG-MOBILE-CHECKOUT-001",
+    "project": "Mobile",
+    "priority": "high",
+    "assignee": "alex.test@example.com",
+    "title": "Checkout crashes after payment confirmation",
+    "description": "Confirming a valid test card payment closes the app before the receipt appears."
+  },
+  "configurations": [
+    {
+      "mode": "middleware",
+      "id": "middleware-1"
+    },
+    {
+      "mode": "middleware",
+      "id": "middleware-2"
+    },
+    {
+      "mode": "middleware",
+      "id": "middleware-3"
+    },
+    {
+      "mode": "boundary",
+      "id": "boundary-1"
+    },
+    {
+      "mode": "boundary",
+      "id": "boundary-2"
+    },
+    {
+      "mode": "boundary",
+      "id": "boundary-3"
+    }
+  ],
+  "task": "File the high-priority Mobile checkout crash for the test assignee, retry the same write and retrieve the issue.",
+  "model": null,
+  "auth": "anonymous loopback",
+  "client": "TypeScript SDK 2.3.1",
+  "node": "v26.13.0",
+  "buildSha256": "26cb946016460809e968a85268088eb32120629f593f416fee56face6bd499d7"
+}

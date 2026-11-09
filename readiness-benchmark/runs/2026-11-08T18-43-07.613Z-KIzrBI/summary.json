@@ -1,0 +1,124 @@
+[
+  {
+    "mode": "middleware",
+    "scheduled": 3,
+    "complete": 3,
+    "executionErrors": 0,
+    "timeouts": 0,
+    "interruptions": 0,
+    "incomplete": 0,
+    "checks": {
+      "fields": {
+        "pass": 3,
+        "fail": 0,
+        "unverified": 0
+      },
+      "retry": {
+        "pass": 3,
+        "fail": 0,
+        "unverified": 0
+      },
+      "retrieval": {
+        "pass": 3,
+        "fail": 0,
+        "unverified": 0
+      },
+      "validation": {
+        "pass": 3,
+        "fail": 0,
+        "unverified": 0
+      },
+      "trace": {
+        "pass": 0,
+        "fail": 3,
+        "unverified": 0
+      },
+      "rejectsAnonymousWrite": {
+        "pass": 0,
+        "fail": 3,
+        "unverified": 0
+      },
+      "tenantIsolation": {
+        "pass": 0,
+        "fail": 0,
+        "unverified": 3
+      },
+      "crossClient": {
+        "pass": 0,
+        "fail": 0,
+        "unverified": 3
+      },
+      "deployment": {
+        "pass": 0,
+        "fail": 0,
+        "unverified": 3
+      },
+      "security": {
+        "pass": 0,
+        "fail": 0,
+        "unverified": 3
+      }
+    }
+  },
+  {
+    "mode": "boundary",
+    "scheduled": 3,
+    "complete": 3,
+    "executionErrors": 0,
+    "timeouts": 0,
+    "interruptions": 0,
+    "incomplete": 0,
+    "checks": {
+      "fields": {
+        "pass": 3,
+        "fail": 0,
+        "unverified": 0
+      },
+      "retry": {
+        "pass": 3,
+        "fail": 0,
+        "unverified": 0
+      },
+      "retrieval": {
+        "pass": 3,
+        "fail": 0,
+        "unverified": 0
+      },
+      "validation": {
+        "pass": 3,
+        "fail": 0,
+        "unverified": 0
+      },
+      "trace": {
+        "pass": 3,
+        "fail": 0,
+        "unverified": 0
+      },
+      "rejectsAnonymousWrite": {
+        "pass": 0,
+        "fail": 3,
+        "unverified": 0
+      },
+      "tenantIsolation": {
+        "pass": 0,
+        "fail": 0,
+        "unverified": 3
+      },
+      "crossClient": {
+        "pass": 0,
+        "fail": 0,
+        "unverified": 3
+      },
+      "deployment": {
+        "pass": 0,
+        "fail": 0,
+        "unverified": 3
+      },
+      "security": {
+        "pass": 0,
+        "fail": 0,
+        "unverified": 3
+      }
+    }
+  }
+]

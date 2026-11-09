@@ -1,0 +1,872 @@
+{
+  "phase": "after",
+  "buildSha256": "de8233232e37849f1ebaa4e5c17fbd01f177a22b44d020ef4a8af97a6a17d325",
+  "writeAuthentication": "required",
+  "checks": {
+    "publicRead": true,
+    "writerCreated": true,
+    "anonymousDenied": true,
+    "discovery": true,
+    "outcome": true,
+    "recovery": true,
+    "compatibility": true,
+    "operations": true
+  },
+  "events": [
+    {
+      "identity": "anonymous",
+      "name": "get-issue",
+      "args": {
+        "id": "MOB-1"
+      },
+      "reply": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"issue\":{\"externalId\":\"PUBLIC-1\",\"project\":\"Mobile\",\"priority\":\"high\",\"assignee\":\"alex.test@example.com\",\"title\":\"Improve the public roadmap\",\"description\":\"Track the next public roadmap update.\",\"id\":\"MOB-1\",\"createdAt\":\"2026-01-01T00:00:00.000Z\"}}"
+          }
+        ],
+        "structuredContent": {
+          "issue": {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          }
+        }
+      },
+      "durationMs": 10.291207999999983,
+      "before": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 2,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          }
+        ]
+      },
+      "after": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 2,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "identity": "anonymous",
+      "name": "create-issue",
+      "args": {
+        "externalId": "DEMO-ANONYMOUS",
+        "project": "Mobile",
+        "priority": "high",
+        "assignee": "alex.test@example.com",
+        "title": "Checkout crashes after payment confirmation",
+        "description": "Confirming a valid test card payment closes the app before the receipt appears."
+      },
+      "reply": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Sign in to create an issue."
+          }
+        ],
+        "isError": true
+      },
+      "durationMs": 2.514250000000004,
+      "before": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 2,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          }
+        ]
+      },
+      "after": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 2,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "identity": "test-writer",
+      "name": "create-issue",
+      "args": {
+        "externalId": "DEMO-WRITER",
+        "project": "Mobile",
+        "priority": "high",
+        "assignee": "alex.test@example.com",
+        "title": "Checkout crashes after payment confirmation",
+        "description": "Confirming a valid test card payment closes the app before the receipt appears."
+      },
+      "reply": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Created issue MOB-2."
+          }
+        ],
+        "structuredContent": {
+          "issue": {
+            "externalId": "DEMO-WRITER",
+            "title": "Checkout crashes after payment confirmation",
+            "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "id": "MOB-2",
+            "createdAt": "2026-11-09T18:44:53.864Z"
+          },
+          "created": true,
+          "deduplicated": false,
+          "mode": "remediated"
+        }
+      },
+      "durationMs": 2.1444580000000144,
+      "before": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 2,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          }
+        ]
+      },
+      "after": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 3,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          },
+          {
+            "externalId": "DEMO-WRITER",
+            "title": "Checkout crashes after payment confirmation",
+            "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "id": "MOB-2",
+            "createdAt": "2026-11-09T18:44:53.864Z"
+          }
+        ]
+      }
+    },
+    {
+      "identity": "test-writer",
+      "name": "get-issue",
+      "args": {
+        "id": "MOB-2"
+      },
+      "reply": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"issue\":{\"externalId\":\"DEMO-WRITER\",\"title\":\"Checkout crashes after payment confirmation\",\"description\":\"Confirming a valid test card payment closes the app before the receipt appears.\",\"project\":\"Mobile\",\"priority\":\"high\",\"assignee\":\"alex.test@example.com\",\"id\":\"MOB-2\",\"createdAt\":\"2026-11-09T18:44:53.864Z\"}}"
+          }
+        ],
+        "structuredContent": {
+          "issue": {
+            "externalId": "DEMO-WRITER",
+            "title": "Checkout crashes after payment confirmation",
+            "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "id": "MOB-2",
+            "createdAt": "2026-11-09T18:44:53.864Z"
+          }
+        }
+      },
+      "durationMs": 1.8118750000000148,
+      "before": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 3,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          },
+          {
+            "externalId": "DEMO-WRITER",
+            "title": "Checkout crashes after payment confirmation",
+            "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "id": "MOB-2",
+            "createdAt": "2026-11-09T18:44:53.864Z"
+          }
+        ]
+      },
+      "after": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 3,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          },
+          {
+            "externalId": "DEMO-WRITER",
+            "title": "Checkout crashes after payment confirmation",
+            "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "id": "MOB-2",
+            "createdAt": "2026-11-09T18:44:53.864Z"
+          }
+        ]
+      }
+    },
+    {
+      "identity": "test-writer",
+      "name": "create-issue",
+      "args": {
+        "externalId": "DEMO-WRITER",
+        "project": "Mobile",
+        "priority": "high",
+        "assignee": "alex.test@example.com",
+        "title": "Checkout crashes after payment confirmation",
+        "description": "Confirming a valid test card payment closes the app before the receipt appears."
+      },
+      "reply": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Existing issue MOB-2 returned; no duplicate created."
+          }
+        ],
+        "structuredContent": {
+          "issue": {
+            "externalId": "DEMO-WRITER",
+            "title": "Checkout crashes after payment confirmation",
+            "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "id": "MOB-2",
+            "createdAt": "2026-11-09T18:44:53.864Z"
+          },
+          "created": false,
+          "deduplicated": true,
+          "mode": "remediated"
+        }
+      },
+      "durationMs": 1.3495410000000163,
+      "before": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 3,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          },
+          {
+            "externalId": "DEMO-WRITER",
+            "title": "Checkout crashes after payment confirmation",
+            "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "id": "MOB-2",
+            "createdAt": "2026-11-09T18:44:53.864Z"
+          }
+        ]
+      },
+      "after": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 3,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          },
+          {
+            "externalId": "DEMO-WRITER",
+            "title": "Checkout crashes after payment confirmation",
+            "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "id": "MOB-2",
+            "createdAt": "2026-11-09T18:44:53.864Z"
+          }
+        ]
+      }
+    },
+    {
+      "identity": "anonymous",
+      "name": "get-issue",
+      "args": {
+        "id": "MOB-MISSING"
+      },
+      "reply": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Issue MOB-MISSING was not found."
+          }
+        ],
+        "isError": true
+      },
+      "durationMs": 1.4373339999999928,
+      "before": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 3,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          },
+          {
+            "externalId": "DEMO-WRITER",
+            "title": "Checkout crashes after payment confirmation",
+            "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "id": "MOB-2",
+            "createdAt": "2026-11-09T18:44:53.864Z"
+          }
+        ]
+      },
+      "after": {
+        "mode": "remediated",
+        "projects": [
+          {
+            "name": "Mobile"
+          }
+        ],
+        "users": [
+          {
+            "email": "alex.test@example.com"
+          }
+        ],
+        "nextIssueNumber": 3,
+        "issues": [
+          {
+            "externalId": "PUBLIC-1",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "title": "Improve the public roadmap",
+            "description": "Track the next public roadmap update.",
+            "id": "MOB-1",
+            "createdAt": "2026-01-01T00:00:00.000Z"
+          },
+          {
+            "externalId": "DEMO-WRITER",
+            "title": "Checkout crashes after payment confirmation",
+            "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+            "project": "Mobile",
+            "priority": "high",
+            "assignee": "alex.test@example.com",
+            "id": "MOB-2",
+            "createdAt": "2026-11-09T18:44:53.864Z"
+          }
+        ]
+      }
+    }
+  ],
+  "trace": [
+    {
+      "timestamp": "2026-11-09T18:44:53.858Z",
+      "serverVersion": "0.1.0",
+      "method": "tools/call",
+      "tool": "get-issue",
+      "arguments": {
+        "id": "MOB-1"
+      },
+      "durationMs": 1,
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2026-11-09T18:44:53.861Z",
+      "serverVersion": "0.1.0",
+      "method": "tools/call",
+      "tool": "create-issue",
+      "arguments": {
+        "externalId": "DEMO-ANONYMOUS",
+        "title": "Checkout crashes after payment confirmation",
+        "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+        "project": "Mobile",
+        "priority": "high",
+        "assignee": "alex.test@example.com"
+      },
+      "durationMs": 0,
+      "outcome": "tool_error"
+    },
+    {
+      "timestamp": "2026-11-09T18:44:53.864Z",
+      "serverVersion": "0.1.0",
+      "method": "tools/call",
+      "tool": "create-issue",
+      "arguments": {
+        "externalId": "DEMO-WRITER",
+        "title": "Checkout crashes after payment confirmation",
+        "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+        "project": "Mobile",
+        "priority": "high",
+        "assignee": "alex.test@example.com"
+      },
+      "durationMs": 0,
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2026-11-09T18:44:53.866Z",
+      "serverVersion": "0.1.0",
+      "method": "tools/call",
+      "tool": "get-issue",
+      "arguments": {
+        "id": "MOB-2"
+      },
+      "durationMs": 0,
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2026-11-09T18:44:53.868Z",
+      "serverVersion": "0.1.0",
+      "method": "tools/call",
+      "tool": "create-issue",
+      "arguments": {
+        "externalId": "DEMO-WRITER",
+        "title": "Checkout crashes after payment confirmation",
+        "description": "Confirming a valid test card payment closes the app before the receipt appears.",
+        "project": "Mobile",
+        "priority": "high",
+        "assignee": "alex.test@example.com"
+      },
+      "durationMs": 0,
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2026-11-09T18:44:53.870Z",
+      "serverVersion": "0.1.0",
+      "method": "tools/call",
+      "tool": "get-issue",
+      "arguments": {
+        "id": "MOB-MISSING"
+      },
+      "durationMs": 1,
+      "outcome": "tool_error"
+    }
+  ],
+  "discovery": {
+    "tools": [
+      {
+        "name": "create-issue",
+        "title": "Create sandbox issue",
+        "description": "Create an issue in the local Mobile sandbox. externalId is the idempotency key.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "externalId": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 80,
+              "description": "Stable caller-supplied idempotency key for this bug report"
+            },
+            "title": {
+              "type": "string",
+              "minLength": 5,
+              "maxLength": 120,
+              "description": "Concise issue title"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 10,
+              "maxLength": 2000,
+              "description": "Bug symptoms and reproduction context"
+            },
+            "project": {
+              "type": "string",
+              "const": "Mobile",
+              "description": "Authorized sandbox project"
+            },
+            "priority": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "urgent"
+              ],
+              "description": "Issue priority"
+            },
+            "assignee": {
+              "type": "string",
+              "const": "alex.test@example.com",
+              "description": "Authorized sandbox test user"
+            }
+          },
+          "required": [
+            "externalId",
+            "title",
+            "description",
+            "project",
+            "priority",
+            "assignee"
+          ],
+          "$schema": "https://json-schema.org/draft/2020-12/schema"
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "issue": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "externalId": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "project": {
+                  "type": "string",
+                  "const": "Mobile"
+                },
+                "priority": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high",
+                    "urgent"
+                  ]
+                },
+                "assignee": {
+                  "type": "string",
+                  "const": "alex.test@example.com"
+                },
+                "createdAt": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "externalId",
+                "title",
+                "description",
+                "project",
+                "priority",
+                "assignee",
+                "createdAt"
+              ],
+              "additionalProperties": false
+            },
+            "created": {
+              "type": "boolean"
+            },
+            "deduplicated": {
+              "type": "boolean"
+            },
+            "mode": {
+              "type": "string",
+              "enum": [
+                "baseline",
+                "remediated"
+              ]
+            }
+          },
+          "required": [
+            "issue",
+            "created",
+            "deduplicated",
+            "mode"
+          ],
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "get-issue",
+        "title": "Get sandbox issue",
+        "description": "Retrieve an issue from the local sandbox by its issue id.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Issue id returned by create-issue"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "$schema": "https://json-schema.org/draft/2020-12/schema"
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "issue": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "externalId": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "project": {
+                  "type": "string",
+                  "const": "Mobile"
+                },
+                "priority": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high",
+                    "urgent"
+                  ]
+                },
+                "assignee": {
+                  "type": "string",
+                  "const": "alex.test@example.com"
+                },
+                "createdAt": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "externalId",
+                "title",
+                "description",
+                "project",
+                "priority",
+                "assignee",
+                "createdAt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "issue"
+          ],
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      }
+    ]
+  },
+  "operatingTargetMs": 2000
+}

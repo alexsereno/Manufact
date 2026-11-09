@@ -1,0 +1,53 @@
+[
+  {
+    "id": "agent-1",
+    "terminal": "execution_error",
+    "verdict": "Unverified",
+    "checks": {
+      "createdRequestedIssue": null,
+      "retrievedWithoutMutation": null
+    },
+    "evidenceErrors": [],
+    "toolCalls": 0,
+    "modelRequests": 1,
+    "returnedModels": [],
+    "tokenUsage": {
+      "prompt": 0,
+      "completion": 0
+    }
+  },
+  {
+    "id": "agent-2",
+    "terminal": "execution_error",
+    "verdict": "Unverified",
+    "checks": {
+      "createdRequestedIssue": null,
+      "retrievedWithoutMutation": null
+    },
+    "evidenceErrors": [],
+    "toolCalls": 0,
+    "modelRequests": 1,
+    "returnedModels": [],
+    "tokenUsage": {
+      "prompt": 0,
+      "completion": 0
+    }
+  },
+  {
+    "id": "agent-3",
+    "terminal": "execution_error",
+    "verdict": "Unverified",
+    "checks": {
+      "createdRequestedIssue": null,
+      "retrievedWithoutMutation": null
+    },
+    "evidenceErrors": [],
+    "toolCalls": 0,
+    "modelRequests": 1,
+    "returnedModels": [],
+    "tokenUsage": {
+      "prompt": 0,
+      "completion": 0
+    }
+  }
+]

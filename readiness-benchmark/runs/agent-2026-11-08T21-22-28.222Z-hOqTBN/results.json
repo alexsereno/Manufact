@@ -1,0 +1,86 @@
+[
+  {
+    "id": "agent-1",
+    "terminal": "complete",
+    "verdict": "Blocked",
+    "checks": {
+      "createdRequestedIssue": true,
+      "retrievedWithoutMutation": true,
+      "retry": true,
+      "validation": true,
+      "trace": true,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    },
+    "evidenceErrors": [],
+    "modelToolCalls": 2,
+    "scriptedCalls": 3,
+    "modelRequests": 3,
+    "returnedModels": [
+      "gpt-6-luna"
+    ],
+    "tokenUsage": {
+      "prompt": 1898,
+      "completion": 117
+    }
+  },
+  {
+    "id": "agent-2",
+    "terminal": "complete",
+    "verdict": "Blocked",
+    "checks": {
+      "createdRequestedIssue": true,
+      "retrievedWithoutMutation": true,
+      "retry": true,
+      "validation": true,
+      "trace": true,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    },
+    "evidenceErrors": [],
+    "modelToolCalls": 2,
+    "scriptedCalls": 3,
+    "modelRequests": 3,
+    "returnedModels": [
+      "gpt-6-luna"
+    ],
+    "tokenUsage": {
+      "prompt": 1898,
+      "completion": 113
+    }
+  },
+  {
+    "id": "agent-3",
+    "terminal": "complete",
+    "verdict": "Blocked",
+    "checks": {
+      "createdRequestedIssue": true,
+      "retrievedWithoutMutation": true,
+      "retry": true,
+      "validation": true,
+      "trace": true,
+      "rejectsAnonymousWrite": false,
+      "tenantIsolation": null,
+      "crossClient": null,
+      "deployment": null,
+      "security": null
+    },
+    "evidenceErrors": [],
+    "modelToolCalls": 2,
+    "scriptedCalls": 3,
+    "modelRequests": 3,
+    "returnedModels": [
+      "gpt-6-luna"
+    ],
+    "tokenUsage": {
+      "prompt": 1898,
+      "completion": 125
+    }
+  }
+]
